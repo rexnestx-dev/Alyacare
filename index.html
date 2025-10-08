@@ -3,57 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Klinik Sehat - Layanan perawatan kesehatan dan kecantikan profesional">
-    <title>Klinik Sehat - Perawatan Kesehatan & Kecantikan</title>
+    <meta name="description" content="Klinik Sehat - Layanan perawatan kesehatan dan kecantikan profesional dengan tenaga medis berpengalaman. Perawatan wajah, tubuh, tangan & kaki.">
+    <meta name="keywords" content="klinik sehat, perawatan wajah, perawatan tubuh, kesehatan, kecantikan, jakarta">
+    <meta name="author" content="Klinik Sehat">
     
-    <!-- Critical CSS Inlined -->
-    <style>
-    /* CRITICAL CSS - Above the fold */
-    :root {
-        --primary-color: #2c7873;
-        --secondary-color: #ff6b6b;
-        --text-dark: #333;
-        --background-white: #fff;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { 
-        font-family: system-ui, -apple-system, sans-serif; 
-        line-height: 1.6; 
-        color: var(--text-dark);
-    }
-    .header { 
-        position: fixed; top: 0; width: 100%; 
-        background: var(--background-white); 
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        z-index: 1000; 
-    }
-    .nav-container {
-        display: flex; justify-content: space-between;
-        align-items: center; padding: 1rem 5%;
-        max-width: 1200px; margin: 0 auto;
-    }
-    .logo-text { 
-        color: var(--primary-color); 
-        font-size: 1.5rem; font-weight: 700;
-    }
-    .hero {
-        background: linear-gradient(135deg, #2c7873, #6fb3b8);
-        color: white; padding: 140px 5% 80px;
-        text-align: center;
-    }
-    .hero-title { font-size: 2rem; margin-bottom: 1rem; }
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Praktik Perawatan - Klinik Sehat">
+    <meta property="og:description" content="Layanan perawatan terbaik untuk kesehatan dan kecantikan Anda">
+    <meta property="og:type" content="website">
     
-    /* Defer non-critical CSS */
-    </style>
-    
-    <!-- Preload main CSS -->
-    <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="style.css"></noscript>
+    <title>Klinik Sehat - Praktik Perawatan Kesehatan & Kecantikan Profesional</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Skip to main content for accessibility -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
+    <!-- Header -->
     <header class="header" role="banner">
         <nav class="navbar" role="navigation" aria-label="Main navigation">
             <div class="nav-container">
@@ -65,88 +31,320 @@
                 <ul class="nav-menu" role="menubar">
                     <li role="none"><a href="#home" role="menuitem" class="nav-link">Beranda</a></li>
                     <li role="none"><a href="#services" role="menuitem" class="nav-link">Layanan</a></li>
-                    <li role="none"><a href="#booking" role="menuitem" class="nav-link">Booking</a></li>
-                    <li role="none"><a href="#about" role="menuitem" class="nav-link">Tentang</a></li>
+                    <li role="none"><a href="#about" role="menuitem" class="nav-link">Tentang Kami</a></li>
                     <li role="none"><a href="#contact" role="menuitem" class="nav-link">Kontak</a></li>
+                    <li role="none"><a href="#booking" role="menuitem" class="nav-link cta-nav">Booking Now</a></li>
                 </ul>
                 
-                <button class="hamburger" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
-                    <span></span><span></span><span></span>
-                </button>
+                <div class="hamburger" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </nav>
     </header>
 
-    <main id="main-content">
-        <section id="home" class="hero">
-            <div class="hero-content">
-                <h1 class="hero-title">Praktik Perawatan Profesional</h1>
-                <p class="hero-description">Layanan perawatan terbaik untuk kesehatan dan kecantikan Anda</p>
-                <div class="hero-buttons">
-                    <button class="cta-button primary" data-action="scroll-to-services">Lihat Layanan</button>
-                    <button class="cta-button secondary" data-action="open-booking">Booking Sekarang</button>
-                </div>
+    <!-- Hero Section -->
+    <section id="home" class="hero" role="main">
+        <div class="hero-content">
+            <h1 class="hero-title">Praktik Perawatan Profesional untuk Kesehatan & Kecantikan Anda</h1>
+            <p class="hero-description">Dengan tenaga medis berpengalaman dan peralatan modern, kami memberikan layanan terbaik untuk merawat tubuh dan kesehatan Anda</p>
+            <div class="hero-buttons">
+                <button class="cta-button primary" onclick="scrollToServices()">Lihat Layanan Kami</button>
+                <button class="cta-button secondary" onclick="openBookingModal()">Booking Sekarang</button>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="services" class="services">
-            <div class="container">
-                <h2 class="section-title">Layanan Kami</h2>
-                <div class="services-grid">
-                    <article class="service-card" data-service="perawatan1">
-                        <div class="service-icon" aria-hidden="true">💆</div>
-                        <h3 class="service-title">Perawatan Wajah</h3>
-                        <p class="service-description">Treatment lengkap untuk kulit wajah sehat dan bersinar</p>
-                        <div class="service-price"><span>Mulai Rp 150.000</span></div>
-                        <button class="service-btn" data-action="service-detail">Detail</button>
-                    </article>
-                    
-                    <article class="service-card" data-service="perawatan2">
-                        <div class="service-icon" aria-hidden="true">💅</div>
-                        <h3 class="service-title">Perawatan Tangan & Kaki</h3>
-                        <p class="service-description">Manicure, pedicure, dan treatment khusus</p>
-                        <div class="service-price"><span>Mulai Rp 100.000</span></div>
-                        <button class="service-btn" data-action="service-detail">Detail</button>
-                    </article>
-                    
-                    <article class="service-card" data-service="perawatan3">
-                        <div class="service-icon" aria-hidden="true">🧖</div>
-                        <h3 class="service-title">Perawatan Tubuh</h3>
-                        <p class="service-description">Body massage, scrub, dan relaksasi total</p>
-                        <div class="service-price"><span>Mulai Rp 200.000</span></div>
-                        <button class="service-btn" data-action="service-detail">Detail</button>
-                    </article>
-                </div>
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Layanan Perawatan Kami</h2>
+            <p class="section-subtitle">Berbagai jenis perawatan profesional untuk kebutuhan kesehatan dan kecantikan Anda</p>
+            
+            <div class="services-grid">
+                <!-- Perawatan 1 -->
+                <article class="service-card" role="article">
+                    <div class="service-icon" aria-hidden="true">💆</div>
+                    <h3 class="service-title">Perawatan Wajah</h3>
+                    <p class="service-description">Treatment lengkap untuk kulit wajah sehat dan bersinar dengan teknologi modern</p>
+                    <ul class="service-features">
+                        <li>Facial Treatment</li>
+                        <li>Acne Solution</li>
+                        <li>Skin Brightening</li>
+                    </ul>
+                    <div class="service-price">
+                        <span class="price">Mulai dari Rp 150.000</span>
+                    </div>
+                    <button class="service-btn" onclick="showServiceDetail('perawatan1')" aria-label="Lihat detail perawatan wajah">
+                        Detail Layanan
+                    </button>
+                </article>
+
+                <!-- Perawatan 2 -->
+                <article class="service-card" role="article">
+                    <div class="service-icon" aria-hidden="true">💅</div>
+                    <h3 class="service-title">Perawatan Tangan & Kaki</h3>
+                    <p class="service-description">Manicure, pedicure, dan treatment khusus untuk tangan dan kaki yang indah</p>
+                    <ul class="service-features">
+                        <li>Manicure & Pedicure</li>
+                        <li>Nail Care</li>
+                        <li>Hand & Foot Spa</li>
+                    </ul>
+                    <div class="service-price">
+                        <span class="price">Mulai dari Rp 100.000</span>
+                    </div>
+                    <button class="service-btn" onclick="showServiceDetail('perawatan2')" aria-label="Lihat detail perawatan tangan dan kaki">
+                        Detail Layanan
+                    </button>
+                </article>
+
+                <!-- Perawatan 3 -->
+                <article class="service-card" role="article">
+                    <div class="service-icon" aria-hidden="true">🧖</div>
+                    <h3 class="service-title">Perawatan Tubuh</h3>
+                    <p class="service-description">Body massage, scrub, dan relaksasi total untuk tubuh yang sehat dan rileks</p>
+                    <ul class="service-features">
+                        <li>Body Massage</li>
+                        <li>Body Scrub</li>
+                        <li>Aromatherapy</li>
+                    </ul>
+                    <div class="service-price">
+                        <span class="price">Mulai dari Rp 200.000</span>
+                    </div>
+                    <button class="service-btn" onclick="showServiceDetail('perawatan3')" aria-label="Lihat detail perawatan tubuh">
+                        Detail Layanan
+                    </button>
+                </article>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Sisanya tetap sama, tapi dengan data attributes -->
-        <section id="booking" class="booking">
-            <!-- Form booking dengan data attributes -->
-        </section>
-
-        <section id="about" class="about">
-            <!-- About section -->
-        </section>
-
-        <section id="contact" class="contact">
-            <!-- Contact section -->
-        </section>
-    </main>
-
-    <!-- Modal -->
-    <div id="serviceModal" class="modal" role="dialog" aria-hidden="true">
+    <!-- Service Details Modal -->
+    <div id="serviceModal" class="modal" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
         <div class="modal-content">
-            <button class="close" data-action="close-modal" aria-label="Close">&times;</button>
-            <div id="modalBody"></div>
+            <button class="close" onclick="closeModal()" aria-label="Close modal">
+                &times;
+            </button>
+            <div id="modalBody">
+                <!-- Content will be loaded here -->
+            </div>
         </div>
     </div>
 
-    <footer class="footer">
-        <!-- Footer content -->
+    <!-- Booking Section -->
+    <section id="booking" class="booking">
+        <div class="container">
+            <h2 class="section-title">Booking Appointment</h2>
+            <p class="section-subtitle">Pilih layanan dan jadwal yang sesuai untuk perawatan Anda</p>
+            
+            <form class="booking-form" id="bookingForm">
+                <div class="form-group">
+                    <label for="patientName" class="form-label">Nama Lengkap *</label>
+                    <input type="text" id="patientName" name="patientName" required class="form-input">
+                </div>
+                
+                <div class="form-group">
+                    <label for="patientEmail" class="form-label">Email *</label>
+                    <input type="email" id="patientEmail" name="patientEmail" required class="form-input">
+                </div>
+                
+                <div class="form-group">
+                    <label for="patientPhone" class="form-label">Nomor Telepon *</label>
+                    <input type="tel" id="patientPhone" name="patientPhone" required class="form-input">
+                </div>
+                
+                <div class="form-group">
+                    <label for="serviceType" class="form-label">Jenis Layanan *</label>
+                    <select id="serviceType" name="serviceType" required class="form-select">
+                        <option value="">Pilih Layanan</option>
+                        <option value="perawatan-wajah">Perawatan Wajah</option>
+                        <option value="perawatan-tangan-kaki">Perawatan Tangan & Kaki</option>
+                        <option value="perawatan-tubuh">Perawatan Tubuh</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="appointmentDate" class="form-label">Tanggal Appointment *</label>
+                    <input type="date" id="appointmentDate" name="appointmentDate" required class="form-input">
+                </div>
+                
+                <div class="form-group">
+                    <label for="appointmentTime" class="form-label">Waktu Preference *</label>
+                    <select id="appointmentTime" name="appointmentTime" required class="form-select">
+                        <option value="">Pilih Waktu</option>
+                        <option value="09:00">09:00</option>
+                        <option value="10:00">10:00</option>
+                        <option value="11:00">11:00</option>
+                        <option value="13:00">13:00</option>
+                        <option value="14:00">14:00</option>
+                        <option value="15:00">15:00</option>
+                        <option value="16:00">16:00</option>
+                        <option value="17:00">17:00</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="patientMessage" class="form-label">Pesan Tambahan</label>
+                    <textarea id="patientMessage" name="patientMessage" rows="4" class="form-textarea" placeholder="Kebutuhan khusus atau pertanyaan..."></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Konfirmasi Booking</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">Tentang Klinik Sehat</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Praktik perawatan profesional dengan pengalaman lebih dari 5 tahun dalam bidang kesehatan dan kecantikan. Kami berkomitmen memberikan layanan terbaik dengan standar higienis yang tinggi.</p>
+                    
+                    <div class="features-grid">
+                        <div class="feature" role="article">
+                            <div class="feature-icon">🕐</div>
+                            <h4>Jam Operasional</h4>
+                            <p>Senin - Sabtu: 09:00 - 18:00<br>Minggu: 10:00 - 16:00</p>
+                        </div>
+                        
+                        <div class="feature" role="article">
+                            <div class="feature-icon">👨‍⚕️</div>
+                            <h4>Tenaga Profesional</h4>
+                            <p>Staff berpengalaman dan bersertifikat di bidangnya masing-masing</p>
+                        </div>
+                        
+                        <div class="feature" role="article">
+                            <div class="feature-icon">⭐</div>
+                            <h4>Berkualitas Tinggi</h4>
+                            <p>Menggunakan produk premium dan alat-alat steril yang terjamin</p>
+                        </div>
+                        
+                        <div class="feature" role="article">
+                            <div class="feature-icon">🏥</div>
+                            <h4>Lingkungan Nyaman</h4>
+                            <p>Ruang perawatan yang bersih, nyaman, dan privat untuk kenyamanan Anda</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Hubungi Kami</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div>
+                            <h4>Telepon</h4>
+                            <p><a href="tel:+6281234567890">0812-3456-7890</a></p>
+                            <p><a href="tel:+628112345678">0811-2345-678</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div>
+                            <h4>Email</h4>
+                            <p><a href="mailto:info@kliniksehat.com">info@kliniksehat.com</a></p>
+                            <p><a href="mailto:booking@kliniksehat.com">booking@kliniksehat.com</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <h4>Alamat</h4>
+                            <p>Jl. Kesehatan No. 123<br>Jakarta Selatan 12345</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">🕒</div>
+                        <div>
+                            <h4>Jam Operasional</h4>
+                            <p>Senin - Sabtu: 09:00 - 18:00</p>
+                            <p>Minggu: 10:00 - 16:00</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="contactName" class="form-label">Nama Lengkap *</label>
+                        <input type="text" id="contactName" name="contactName" required class="form-input">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contactEmail" class="form-label">Email *</label>
+                        <input type="email" id="contactEmail" name="contactEmail" required class="form-input">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contactSubject" class="form-label">Subjek *</label>
+                        <input type="text" id="contactSubject" name="contactSubject" required class="form-input">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contactMessage" class="form-label">Pesan *</label>
+                        <textarea id="contactMessage" name="contactMessage" rows="5" required class="form-textarea" placeholder="Tulis pesan Anda..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Kirim Pesan</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Klinik Sehat</h3>
+                    <p>Layanan perawatan kesehatan dan kecantikan profesional dengan standar tinggi untuk kenyamanan dan kepuasan Anda.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Beranda</a></li>
+                        <li><a href="#services">Layanan</a></li>
+                        <li><a href="#booking">Booking</a></li>
+                        <li><a href="#about">Tentang Kami</a></li>
+                        <li><a href="#contact">Kontak</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Layanan</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services">Perawatan Wajah</a></li>
+                        <li><a href="#services">Perawatan Tangan & Kaki</a></li>
+                        <li><a href="#services">Perawatan Tubuh</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Kontak</h4>
+                    <p>📞 0812-3456-7890</p>
+                    <p>📧 info@kliniksehat.com</p>
+                    <p>📍 Jl. Kesehatan No. 123, Jakarta</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Klinik Sehat. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
 
-    <!-- JS dengan defer -->
-    <script src="script.js" defer></script>
+    <script src="script.js"></script>
 </body>
 </html>
